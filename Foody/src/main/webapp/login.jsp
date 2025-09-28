@@ -1,0 +1,99 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Log In - QuickBite</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <a href="index.html">
+                    <h2>🍀🍴 QuickBite</h2>
+                </a>
+            </div>
+            <div class="nav-links">
+                <a href="signup.html" class="btn-secondary">Sign Up</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Log In Form -->
+    <section class="auth-section">
+        <div class="auth-container">
+            <div class="auth-card">
+                <div class="auth-header">
+                    <h1>Welcome Back</h1>
+                    <p>Log in to your QuickBite account and order delicious food</p>
+                </div>
+
+                <!-- ✅ Form sends to /log-in servlet -->
+                <form class="auth-form" action="log-in" method="POST">
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" name="email" required placeholder="Enter your email">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="password">Password</label>
+                        <input type="password" id="password" name="password" required placeholder="Enter your password">
+                    </div>
+
+                    <div class="form-group checkbox-group">
+                        <label class="checkbox-label">
+                            <input type="checkbox">
+                            <span class="checkmark"></span>
+                            Remember me
+                        </label>
+                        <a href="#" class="forgot-password">Forgot password?</a>
+                    </div>
+
+                    <button type="submit" class="btn-primary btn-full">Log In</button>
+                </form>
+
+                <!-- ✅ Show error message if login fails -->
+                <%
+                    String errorMessage = (String) request.getAttribute("errorMessage");
+                    if (errorMessage != null) {
+                %>
+                    <p style="color: red; margin-top: 10px;"><%= errorMessage %></p>
+                <%
+                    }
+                %>
+
+                <div class="divider">
+                    <span>or</span>
+                </div>
+
+                <div class="social-login">
+                    <button class="btn-social btn-google">
+                        <span class="social-icon">🔍</span>
+                        Continue with Google
+                    </button>
+                    <button class="btn-social btn-facebook">
+                        <span class="social-icon">📘</span>
+                        Continue with Facebook
+                    </button>
+                </div>
+
+                <div class="auth-footer">
+                    <p>Don't have an account? <a href="signup.html">Sign up here</a></p>
+                </div>
+            </div>
+
+            <div class="auth-image">
+                <img src="https://images.pexels.com/photos/4393021/pexels-photo-4393021.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Delicious food ordering">
+                <div class="image-overlay">
+                    <h3>Welcome Back!</h3>
+                    <p>Your favorite restaurants are waiting for you</p>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+</html>

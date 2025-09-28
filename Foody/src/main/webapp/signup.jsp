@@ -1,0 +1,104 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+    
+    
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up - QuickBite</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <a href="index.html">
+                    <h2>🍀🍴 QuickBite</h2>
+                </a>
+            </div>
+            <div class="nav-links">
+                <a href="login.jsp" class="btn-secondary">Log In</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Sign Up Form -->
+    <section class="auth-section">
+        <div class="auth-container">
+            <div class="auth-card">
+                <div class="auth-header">
+                    <h1>Create Your Account</h1>
+                    <p>Join QuickBite and start enjoying amazing food delivery</p>
+                </div>
+
+                <form class="auth-form" action="sign-up" method="POST">
+                    <div class="form-row">
+                        <div class="form-group">
+                        	
+                            <label for="name">Full Name</label>
+                            <input type="text" id="name" name="name" required placeholder="Enter your full name">
+                        </div>
+                        <div class="form-group">
+                            <label for="username">Username</label>
+                            <input type="text" id="username" name="username" required placeholder="Choose a username">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" name="email" required placeholder="Enter your email">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="password">Password</label>
+                        <input type="password" id="password" name="password" required placeholder="Create a strong password">
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="phone">Phone Number</label>
+                            <input type="tel" id="phone" name="phone" required placeholder="(+91)">
+                        </div>
+                        
+                    </div>
+
+                    <div class="form-group">
+                        <label for="address">Delivery Address</label>
+                        <textarea id="address" name="address" required placeholder="Enter your complete delivery address" rows="3"></textarea>
+                    </div>
+
+                    <div class="form-group checkbox-group">
+                        <label class="checkbox-label">
+                            <input type="checkbox" required>
+                            <span class="checkmark"></span>
+                            I agree to the <a href="#">Terms of Service</a> and <a href="#">Privacy Policy</a>
+                        </label>
+                    </div>
+
+                    <button type="submit" class="btn-primary btn-full">Create Account</button>
+                </form>
+
+                <div class="auth-footer">
+                    <p>Already have an account? <a href="login.jsp">Log in here</a></p>
+                </div>
+            </div>
+
+            <div class="auth-image">
+                <img src="images/signup.jpg" alt="Food delivery service">
+                <div class="image-overlay">
+                    <h3>Join Our Community</h3>
+                    <p>Over 50,000 happy customers trust QuickBite for their daily meals</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // Set today's date as default for create date
+        document.getElementById('createDate').valueAsDate = new Date();
+    </script>
+</body>
+</html>
